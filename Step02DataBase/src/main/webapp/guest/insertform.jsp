@@ -22,8 +22,7 @@
 			</div>
 			<div class="mb-1">
 				<label for="content" class="form-label">내용</label>
-				<textarea class="form-control" type="text" id="content"
-					name="content" placeholder="내용을 작성하세요">
+				<textarea class="form-control" type="text" id="content" name="content" cols="30" rows="10" placeholder="내용을 작성하세요">
 				</textarea>
 			</div>
 			<button class="btn btn-success" type="submit">등록</button>

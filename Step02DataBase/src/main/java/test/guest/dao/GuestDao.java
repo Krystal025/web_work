@@ -33,7 +33,7 @@ public class GuestDao {
 		try {
 			conn = new DbcpBean().getConn();
 			String sql = "UPDATE board_guest"
-					+" SET writer=? content=?"
+					+" SET writer=?, content=?"
 					+" WHERE num=?"
 					+" AND pwd=?";
 			pstmt = conn.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class GuestDao {
 			//DBCPBean 객체를 이용해서 Connection객체를 얻어온다 (Connection Pool에서 얻어오기)
 			conn = new DbcpBean().getConn();
 			//실행할 sql문
-			String sql = "SELECT writer, content, regdate"
+			String sql = "SELECT writer, content, regdate, pwd"
 					+" FROM board_guest"
 					+" WHERE num=?";
 			pstmt = conn.prepareStatement(sql);
@@ -89,6 +89,7 @@ public class GuestDao {
 				dto.setWriter(rs.getString("writer"));
 				dto.setContent(rs.getString("content"));
 				dto.setRegdate(rs.getString("regdate"));
+				dto.setPwd(rs.getString("pwd"));
 				dto.setNum(num);
 			}
 		} catch (SQLException se) {
@@ -191,9 +192,9 @@ public class GuestDao {
 			// DBCPBean 객체를 이용해서 Connection객체를 얻어온다 (Connection Pool에서 얻어오기)
 			conn = new DbcpBean().getConn();
 			// 실행할 sql문
-			String sql = "SELECT num, writer, content, regdate" 
+			String sql = "SELECT num, writer, content, pwd, regdate" 
 					+ " FROM board_guest" 
-					+ " ORDER BY num ASC";
+					+ " ORDER BY num DESC";
 			pstmt = conn.prepareStatement(sql);
 			// sql문이 미완성이라면 여기서 완성
 
@@ -206,8 +207,9 @@ public class GuestDao {
 				dto.setNum(rs.getInt("num"));
 				dto.setWriter(rs.getString("writer"));
 				dto.setContent(rs.getString("content"));
+				dto.setPwd(rs.getString("pwd"));
 				dto.setRegdate(rs.getString("regdate"));
-				// ArrayList객체에 누적시키기
+				// 글정보가 담긴 dto를 ArrayList객체에 누적시킴
 				list.add(dto);
 			}
 		} catch (SQLException se) {

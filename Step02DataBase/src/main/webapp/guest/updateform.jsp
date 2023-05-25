@@ -19,22 +19,19 @@
 </head>
 <body>
 	<div class="container mt-5">
-		<h1>글 내용 수정</h1>
+		<h1>방명록 글 내용 수정</h1>
 		<form action="update.jsp" method="get">
 			<div class="mb-1">
-				<label class="form-label" for="num">번호</label> <input
-					class="form-control" type="text" id="num" name="num"
-					value="<%=dto.getNum()%>" readonly/>
+				<label class="form-label" for="num">번호</label> 
+				<input class="form-control" type="text" id="num" name="num" value="<%=dto.getNum()%>" readonly/>
 			</div>
 			<div class="mb-1">
-				<label class="form-label" for="readonly">등록일</label> <input
-					class="form-control" type="text" id="regdate" name="regdate"
-					value="<%=dto.getRegdate()%>" readonly/>
+				<label class="form-label" for="readonly">등록일</label> 
+				<input class="form-control" type="text" id="regdate" name="regdate" value="<%=dto.getRegdate()%>" readonly/>
 			</div>
 			<div class="mb-1">
-				<label class="form-label" for="writer">작성자</label> <input
-					class="form-control" type="text" id="writer" name="writer"
-					value="<%=dto.getWriter()%>" />
+				<label class="form-label" for="writer">작성자</label> 
+				<input class="form-control" type="text" id="writer" name="writer" value="<%=dto.getWriter()%>" />
 			</div>
 			<div class="mb-1">
 				<label class="form-label" for="content">내용</label>
@@ -43,9 +40,8 @@
 				</textarea>
 			</div>
 			<div class="mb-1">
-				<label class="form-label" for="pwd">비밀번호</label> <input
-					class="form-control" type="password" id="pwd" name="pwd"
-					value="<%=dto.getPwd()%>" />
+				<label class="form-label" for="pwd">비밀번호</label> 
+				<input class="form-control" type="password" id="pwd" name="pwd" placeholder="Password"/>
 			</div>
 			<button class="btn btn-primary" type="submit">수정</button>
 			<button class="btn btn-warning" type="reset">취소</button>
