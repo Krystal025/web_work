@@ -31,7 +31,7 @@
 <body>
 	<!-- 웹브라우저가 무시하는 주석 -->
 	<%-- jsp 페이지가 무시하는 주석 (웹브라우저에 출력X)--%>
-	<div class="container mt-5">
+	<div class="container mt-3">
 		<h1>알림</h1>
 		<script>
 		<%if(isSuccess){%>

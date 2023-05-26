@@ -27,7 +27,7 @@
 	<jsp:include page="/include/navbar.jsp">
 		<jsp:param value="guest" name="current"/>
 	</jsp:include>
-	<div class="container mt-5">
+	<div class="container mt-3">
 		<h1>방명록 글 목록</h1>
 		<div class="text-end">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
@@ -35,7 +35,7 @@
   			<path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
   			<path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
 			</svg>
-			<a href="${pageContext.request.contextPath}/guest/insertform.jsp">글 등록</a>
+			<a href="${pageContext.request.contextPath}/guest/insertform.jsp" class="text-reset text-decoration-none">글 작성</a>
 			<span class="visually-hidden">글 등록</span>
 		</div>
 		<table class="table table-striped">
@@ -43,7 +43,7 @@
 				<tr>
 					<th>번호</th>
 					<th>작성자</th>
-					<th>등록일</th>
+					<th>작성일</th>
 					<th>내용</th>
 					<th>수정</th>
 					<th>삭제</th>
