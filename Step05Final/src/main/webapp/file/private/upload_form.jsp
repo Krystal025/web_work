@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>/file/private/upload_form.jsp</title>
 </head>
 <body>
 	<div class="container">
 		<h3>파일 업로드 폼입니다</h3>
-		<!-- 
+				<!-- 
 			파일 업로드 폼 작성법
 			1. method = "post"
 			2. enctype = "multipart/form-data"
@@ -31,5 +31,6 @@
 		  	<button type="submit">업로드</button>
 		 </form>
 	</div>
+	<script src="${pageContext.request.contextPath}/js/my_util.js"></script>
 </body>
 </html>

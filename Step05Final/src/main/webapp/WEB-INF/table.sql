@@ -19,3 +19,23 @@ CREATE TABLE board_file(
 );
 
 CREATE SEQUENCE board_file_seq;
+
+SELECT *
+FROM(SELECT result1.*, ROWNUM AS rnum
+	FROM 
+		(SELECT num, writer, title, orgFileName, fileSize, regdate
+		FROM board_file
+		ORDER BY num DESC)result1))
+WHERE rnum BETWEEN ? AND ?;
+
+--게시글을 작성할 테이블
+CREATE TABLE board_cafe(
+	num NUMBER PRIMARY KEY,--글 번호
+	writer VARCHAR2(100) NOT NULL,--작성자 (로그인 아이디)
+	title VARCHAR2(100) NOT NULL,--제목
+	content CLOB, --글 내용
+	viewCount NUMBER,  --조회수
+	regdate DATE
+);
+--게시글의 번호를 얻어낼 시퀀스
+CREATE SEQUENCE board_cafe_seq;

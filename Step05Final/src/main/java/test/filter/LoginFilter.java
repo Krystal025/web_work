@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 // urlPatterns = String{}
-@WebFilter(urlPatterns = {"/private/*","/file/private/*"})
+@WebFilter(urlPatterns = {"/private/*","/file/private/*","/users/private/*","/cafe/private/*"})
 public class LoginFilter implements Filter{
 
 	@Override
@@ -60,7 +60,7 @@ public class LoginFilter implements Filter{
 	         // ServletResponse type 을 HttpServletResponse type 으로 casting
 	         HttpServletResponse res=(HttpServletResponse)response;
 	         
-	         res.sendRedirect(cPath+"/users/login_form.jsp?url="+encodedUrl);
+	         res.sendRedirect(cPath+"/users/loginform.jsp?url="+encodedUrl);
 	      }
 	      
 	   }

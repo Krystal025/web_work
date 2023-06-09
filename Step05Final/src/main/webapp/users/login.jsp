@@ -48,7 +48,7 @@
 	<%}else{ %>
 		<p class="alert alert-danger">
 			아이디 혹은 비밀번호가 틀렸습니다. 
-			<a href="${pageContext.request.contextPath}/users/login_form.jsp?url=<%=encodedUrl%>">다시시도</a>
+			<a href="${pageContext.request.contextPath}/users/loginform.jsp?url=<%=encodedUrl%>">다시시도</a>
 		</p>
 	<%} %>
 	</div>
