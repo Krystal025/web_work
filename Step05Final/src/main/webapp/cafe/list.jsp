@@ -4,9 +4,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	//한 페이지에 몇개씩 표시할 것인지
+	//한 페이지에 몇개의 행씩 표시할 것인지
 	final int PAGE_ROW_COUNT = 5;
-	//하단 페이지를 몇개씩 표시할 것인지 
+	//하단 페이지 버튼을 몇개씩 표시할 것인지 
 	final int PAGE_DISPLAY_COUNT = 5;
 
 	//보여줄 페이지의 번호를 일단 1이라고 초기값 지정 (넘어오는 값이 없으면 1페이지를 보여줌)
@@ -52,13 +52,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>/cafe/list.jsp</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 <body>
 	<div class="container">
 		<h1>게시글 목록</h1>
 		<a href="private/insertform.jsp">새글 작성</a>
-		<table>
-			<thead>
+		<table class="table table-striped">
+			<thead class="table-dark">
 			 <tr>
 			 	<th>글번호</th>
 			 	<th>작성자</th>
@@ -73,20 +74,37 @@
 				<td><%=tmp.getNum() %></td>
 				<td><%=tmp.getWriter() %></td>
 				<td>
-					<a href="detail.jsp"><%=tmp.getTitle() %></a>	
+					<a href="detail.jsp?num=<%=tmp.getNum()%>">
+					<%=tmp.getTitle() %>
+					</a>	
 				</td>
 				<td><%=tmp.getViewCount() %></td>
 				<td><%=tmp.getRegdate() %></td>
-				<td>
-					<!-- 글 작성자와 로그인된 아이디가 같을 때만 수정/삭제링크 출력 -->
-					<%if(tmp.getWriter().equals(id)){%>
-						<a href="${pageContext.request.contextPath}/cafe/private/updateform.jsp">수정</a>
-					<%} %>	
-				</td>
 			</tr>
 			<%} %>
 			</tbody>
 		</table>
+		<nav>
+			<ul class="pagination mt-5">
+			<%--startPageNum이 1이 아닌 경우에만 Prev 링크를 제공--%>
+			<%if(startPageNum != 1){ %>
+				<li class="page-item">
+					<a class="page-link" href="list.jsp?pageNum=<%= startPageNum-1%>">Prev</a>
+				</li>
+			<%} %>
+			<%for(int i=startPageNum; i<=endPageNum; i++){ %>
+				<li class="page-item <%=i==pageNum ? "active" : "" %>">
+					<a class="page-link" href="list.jsp?pageNum=<%=i%>"><%=i %></a>
+				</li>
+			<%} %>
+			<%--마지막 페이지 번호가 전체 페이지의 갯수보다 작으면 Next링크 제공--%>
+			<%if(endPageNum < totalPageCount){ %>
+				<li class="page-item">
+					<a class="page-link" href="list.jsp?pageNum=<%= endPageNum+1%>">Next</a>
+				</li>
+			<%} %>
+			</ul>
+		</nav>
 	</div>
 </body>
 </html>

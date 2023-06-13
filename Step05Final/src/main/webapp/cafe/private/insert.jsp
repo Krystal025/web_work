@@ -22,17 +22,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>/cafe/private/insert.jsp</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 <body>
 	<div class="container">
 		<h1>알림</h1>
 		<%if(isSuccess){ %>
-			<p>
+			<p class="alert alert-success">
 				저장되었습니다.
-				<a href="${pageContext.request.contextPath}/cafe/list.jsp">게시글 목록</a>
+				<a href="${pageContext.request.contextPath}/cafe/list.jsp">목록보기</a>
 			</p>
 		<%}else{ %>
-			<p>
+			<p class="alert alert-danger">
 				저장에 실패하였습니다.
 				<a href="insertform.jsp">다시 작성</a>
 			</p>
