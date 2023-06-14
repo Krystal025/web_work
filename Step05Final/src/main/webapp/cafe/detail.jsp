@@ -69,5 +69,11 @@
 			</script>
 		<%} %>
 	</div>
+=======
+<title>/cafe/detail.jsp</title>
+</head>
+<body>
+	
+>>>>>>> 389b2162a4cee2c72d8fdb3f75f6ba76f295255a
 </body>
 </html>

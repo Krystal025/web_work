@@ -2,7 +2,18 @@
 <%@page import="test.cafe.dto.CafeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%--
+=======
+<%
+	//읽어올 때 한글이 깨지지 않도록 함
+	request.setCharacterEncoding("utf-8");  //꼭 필요한지 확인!
+	//updateform으로 전송되는 값 읽어옴
+	int num = Integer.parseInt(request.getParameter("num"));
+	String title = request.getParameter("title");
+	String content = request.getParameter("content");
+	//읽어온 정보를 Dto에 담음
+>>>>>>> 389b2162a4cee2c72d8fdb3f75f6ba76f295255a
 	CafeDto dto = new CafeDto();
 	
 	int num = Integer.parseInt(request.getParameter("num"));
