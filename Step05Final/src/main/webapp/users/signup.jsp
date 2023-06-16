@@ -24,7 +24,7 @@
 <title>/users/signup.jsp</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container mt-3">
 		<h1>알림</h1>
 		<%if(isSuccess){ %>
 			<p>

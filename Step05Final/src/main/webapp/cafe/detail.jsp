@@ -19,7 +19,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container mt-3">
+	<nav aria-label="breadcrumb">
+  	<ol class="breadcrumb">
+    	<li class="breadcrumb-item"><a href="../index.jsp">Home</a></li>
+    	<li class="breadcrumb-item"><a href="list.jsp">Cafe</a></li>
+    	<li class="breadcrumb-item active">Detail</li>
+  	</ol>
+	</nav>
 	<h3>글 상세보기</h3>
 		<table class="table table-bordered">
 			<tr>
@@ -69,11 +76,4 @@
 			</script>
 		<%} %>
 	</div>
-=======
-<title>/cafe/detail.jsp</title>
-</head>
-<body>
-	
->>>>>>> 389b2162a4cee2c72d8fdb3f75f6ba76f295255a
-</body>
 </html>

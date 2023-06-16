@@ -39,14 +39,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container mt-3">
 	<%if(isValid){ %>
 		<p class="alert alert-success">
 			<strong><%=dto.getId() %></strong>님 로그인 되었습니다.
 			<a href="<%=url%>">확인</a>
 		</p>
 	<%}else{ %>
-		<p class="alert alert-danger">
+		<p class="alert alert-danger mt-3">
 			아이디 혹은 비밀번호가 틀렸습니다. 
 			<a href="${pageContext.request.contextPath}/users/loginform.jsp?url=<%=encodedUrl%>">다시시도</a>
 		</p>
