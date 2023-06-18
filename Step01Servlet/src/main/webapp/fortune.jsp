@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>fortune.jsp</title>
+<title>/fortune.jsp</title>
 </head>
 <body>
 <% 

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>send.jsp</title>
+<title>/send.jsp</title>
 </head>
 <% 
 	//요청 인코딩 설정(한글이 깨지지 않도록)	
